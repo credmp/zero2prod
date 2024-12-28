@@ -11,7 +11,7 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.openssl ];
+          LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ pkgs.openssl ];
           packages = [
             pkgs.pkg-config
             pkgs.openssl.dev
@@ -23,6 +23,8 @@
             pkgs.rustfmt
             pkgs.cargo-tarpaulin
             pkgs.mold
+            pkgs.sqlx-cli
+            pkgs.postgresql_17
           ];
         };
       });
