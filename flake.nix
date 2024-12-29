@@ -22,6 +22,8 @@
             pkgs.rust-analyzer
             pkgs.rustfmt
             pkgs.cargo-tarpaulin
+            pkgs.cargo-udeps
+            pkgs.cargo-edit
             pkgs.mold
             pkgs.sqlx-cli
             pkgs.postgresql_17
