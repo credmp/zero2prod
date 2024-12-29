@@ -27,6 +27,8 @@
             pkgs.mold
             pkgs.sqlx-cli
             pkgs.postgresql_17
+            pkgs.doctl
+            pkgs.jq
           ];
         };
       });

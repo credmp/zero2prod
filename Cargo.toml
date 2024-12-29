@@ -39,3 +39,5 @@ tracing-log = "0.2"
 # Keep secret data from the logs
 secrecy = { version = "0.8", features = ["serde"] }
 tracing-actix-web = "0.7"
+# To parse values from the environment
+serde-aux = "4"
