@@ -54,11 +54,13 @@ services:
         value: ${newsletter.DATABASE}
 databases:
   # PG = Postgres
-  - engine: PG
+  - name: newsletter
+    engine: PG
     # Database name
-    name: newsletter
+    db_name: newsletter
+    db_user: newsletter
     # Again, let's keep the bill lean
     num_nodes: 1
     size: db-s-dev-database
     # Postgres version
-    version: "16"
+    version: "13"
