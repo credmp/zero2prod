@@ -41,3 +41,15 @@ secrecy = { version = "0.8", features = ["serde"] }
 tracing-actix-web = "0.7"
 # To parse values from the environment
 serde-aux = "4"
+# Validation of domain
+unicode-segmentation = "1"
+# Better assertions in test
+claims = "0.7"
+# Validation in Type Driven Design
+validator = "0.18"
+# Fake data for testing
+fake = "2.9"
+# Property based testing
+quickcheck = "1.0.3"
+quickcheck_macros = "1"
+rand = "0.8"
