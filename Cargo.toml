@@ -14,7 +14,7 @@ name = "zero2prod"
 
 [dependencies]
 actix-web = "4"
-reqwest = {version = "0.12.11", default_features = false, features = ["json", "rustls-tls"]}
+reqwest = {version = "0.12.11", default-features = false, features = ["json", "rustls-tls"]}
 config = "0.14"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 serde = { version = "1", features = ["derive"] }
@@ -53,3 +53,7 @@ fake = "2.9"
 quickcheck = "1.0.3"
 quickcheck_macros = "1"
 rand = "0.8"
+# Mocking for rest endpoints
+wiremock = "0.6"
+# Deserialize json in testcases
+serde_json = "1"
