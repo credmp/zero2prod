@@ -47,6 +47,8 @@ unicode-segmentation = "1"
 claims = "0.7"
 # Validation in Type Driven Design
 validator = "0.18"
+
+[dev-dependencies]
 # Fake data for testing
 fake = "2.9"
 # Property based testing
@@ -57,3 +59,5 @@ rand = "0.8"
 wiremock = "0.6"
 # Deserialize json in testcases
 serde_json = "1"
+# parsing links in tests
+linkify = "0.10"
