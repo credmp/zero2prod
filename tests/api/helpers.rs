@@ -45,7 +45,7 @@ pub struct ConfirmationLinks {
 impl TestApp {
     pub async fn post_subscriptions(&self, body: String) -> reqwest::Response {
         reqwest::Client::new()
-            .post(&format!("{}/subscriptions", &self.address))
+            .post(format!("{}/subscriptions", &self.address))
             .header("Content-Type", "application/x-www-form-urlencoded")
             .body(body)
             .send()
@@ -71,8 +71,8 @@ impl TestApp {
             confirmation_link.set_port(Some(self.port)).unwrap();
             confirmation_link
         };
-        let html = get_link(&body["HtmlBody"].as_str().unwrap());
-        let plain_text = get_link(&body["TextBody"].as_str().unwrap());
+        let html = get_link(body["HtmlBody"].as_str().unwrap());
+        let plain_text = get_link(body["TextBody"].as_str().unwrap());
         ConfirmationLinks { html, plain_text }
     }
 }
@@ -107,7 +107,7 @@ pub async fn spawn_app() -> TestApp {
     let _ = tokio::spawn(application.run_until_stopped());
     TestApp {
         // How do we get these?
-        address: address,
+        address,
         port: application_port,
         db_pool: get_connection_pool(&configuration.database),
         email_server,
