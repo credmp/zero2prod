@@ -49,6 +49,8 @@ claims = "0.7"
 validator = "0.18"
 # We need the `std_rng` to get access to the PRNG we want
 rand = { version = "0.8", features = ["std_rng"] }
+thiserror = "2.0.9"
+anyhow = "1.0.95"
 
 [dev-dependencies]
 # Fake data for testing

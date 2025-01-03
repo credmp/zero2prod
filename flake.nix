@@ -30,6 +30,7 @@
             pkgs.postgresql_17
             pkgs.doctl
             pkgs.jq
+            pkgs.bunyan-rs
           ];
         };
       });
