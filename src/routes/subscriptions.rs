@@ -12,6 +12,8 @@ use crate::{
     startup::ApplicationBaseUrl,
 };
 
+use super::error_chain_fmt;
+
 #[derive(Deserialize)]
 pub struct FormData {
     email: String,
@@ -65,19 +67,6 @@ impl ResponseError for SubscribeError {
             SubscribeError::UnexpectedError(_) => StatusCode::INTERNAL_SERVER_ERROR,
         }
     }
-}
-
-fn error_chain_fmt(
-    e: &impl std::error::Error,
-    f: &mut std::fmt::Formatter<'_>,
-) -> std::fmt::Result {
-    writeln!(f, "{}\n", e)?;
-    let mut current = e.source();
-    while let Some(cause) = current {
-        writeln!(f, "Caused by:\n\t{}", cause)?;
-        current = cause.source();
-    }
-    Ok(())
 }
 
 // We are still using a bespoke implementation of `Debug`
@@ -136,10 +125,7 @@ VALUES ($1, $2)"#,
         subscription_token,
         subscriber_id
     );
-    transaction.execute(query).await.map_err(|e| {
-        tracing::error!("Failed to execute query: {:?}", e);
-        StoreTokenError(e)
-    })?;
+    transaction.execute(query).await.map_err(StoreTokenError)?;
     Ok(())
 }
 
