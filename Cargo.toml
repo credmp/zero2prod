@@ -51,6 +51,10 @@ validator = "0.18"
 rand = { version = "0.8", features = ["std_rng"] }
 thiserror = "2.0.9"
 anyhow = "1.0.95"
+# Authentication
+base64 = "0.22"
+# sha3 = "0.9" # obsolete over argon2
+argon2 = { version = "0.5", features = ["std"] }
 
 [dev-dependencies]
 # Fake data for testing
