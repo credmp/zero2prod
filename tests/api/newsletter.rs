@@ -91,7 +91,7 @@ async fn create_unconfirmed_subscriber(app: &TestApp) -> ConfirmationLinks {
         .unwrap()
         .pop()
         .unwrap();
-    app.get_confirmation_links(&email_request)
+    app.get_confirmation_links(email_request)
 }
 
 async fn create_confirmed_subscriber(app: &TestApp) {
@@ -142,7 +142,7 @@ async fn requests_missing_authorization_are_rejected() {
     // Arrange
     let app = spawn_app().await;
     let response = reqwest::Client::new()
-        .post(&format!("{}/newsletters", &app.address))
+        .post(format!("{}/newsletters", &app.address))
         .json(&serde_json::json!({
             "title": "Newsletter title",
             "content": {

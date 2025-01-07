@@ -25,6 +25,7 @@
             pkgs.cargo-udeps
             pkgs.cargo-edit
             pkgs.cargo-llvm-cov
+            pkgs.cargo-outdated
             pkgs.mold
             pkgs.sqlx-cli
             pkgs.postgresql_17
