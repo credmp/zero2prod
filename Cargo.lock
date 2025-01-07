@@ -1129,6 +1129,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "htmlescape"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e9025058dae765dee5070ec375f591e2ba14638c63feff74f13805a72e523163"
+
+[[package]]
 name = "http"
 version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3208,6 +3214,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "urlencoding"
+version = "2.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "daf8dba3b7eb870caf1ddeed7bc9d2a049f3cfdfae7cb521b087cc33ae4c49da"
+
+[[package]]
 name = "utf16_iter"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3699,6 +3711,9 @@ dependencies = [
  "config",
  "env_logger 0.9.3",
  "fake",
+ "hex",
+ "hmac",
+ "htmlescape",
  "linkify",
  "log",
  "quickcheck",
@@ -3709,6 +3724,7 @@ dependencies = [
  "serde",
  "serde-aux",
  "serde_json",
+ "sha2",
  "sqlx",
  "thiserror 2.0.9",
  "tokio",
@@ -3718,6 +3734,7 @@ dependencies = [
  "tracing-log 0.2.0",
  "tracing-subscriber",
  "unicode-segmentation",
+ "urlencoding",
  "uuid",
  "validator",
  "wiremock",
